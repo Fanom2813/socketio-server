@@ -6,8 +6,8 @@ app.get('/', function(req, res) {
    res.send("Hi!");
 });
 
-app.post('/send-to-user', {
-  
+app.post('/send-to-user', function(req, res) {
+  res.send("Hi!");
 })
 
 
