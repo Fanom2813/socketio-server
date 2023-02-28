@@ -5,10 +5,21 @@ const port = process.env.PORT || 8080;
 app.get('/', function(req, res) {
    res.send("Hi!");
 });
+
+app.post('/send-to-user', {
+  
+})
+
+
 io.on('connection', (socket) => {
   console.log('user connected');
   socket.on('disconnect', function () {
-    console.log('user disconnected');
+    console.log('user disconnected', socket.userId);
+
+  });
+  socket.on('identifyUser', function (data) {
+    console.log('Setting user id ', data);
+    socket.userId = data;
   });
 })
 server.listen(port, function() {
