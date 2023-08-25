@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/thehhvjh/realtime.thehubexchange.com
+    - /bin/cp -r * $DEPLOYPATH
